@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="small-12 large-4 columns">
+      <form>
+            <label>Select Your Time</label>
+              <select name="timeSelected" id="timeSelected" ng-model="data.timeSelected">
+                <option value="">Meditation Length</option>
+                <option value="300">5 Minutes</option>
+                <option value="600">10 Minutes</option>
+                <option value="900">15 Minutes</option>
+                <option value="1200">20 Minutes</option>
+              </select>
+        </form></div>
+  <div class="small-12 large-4 columns">
+      <form>
+            <label>Background Music</label>
+              <select name="musicSelected" id="musicSelected" ng-model="data.musicSelected">
+                <option value="">Silence</option>
+                <option value="forestStorm">Forest Storm</option>
+                <option value="oceanWaves">Ocean Waves</option>
+                <option value="cityNoise">City Noise</option>
+                <option value="apollo">Apollo</option>
+              </select>
+        </form></div>
+  <div class="small-12 large-4 columns">
+      <form>
+            <label>Guided Meditation?</label>
+              <select name="guidanceSelected" id="guidanceSelected" ng-model="data.guidanceSelected">
+                <option value="">No Guidance</option>
+                <option value="breathingMeditation">Breathing Meditation</option>
+                <option value="starbuck">Kindness</option>
+                <option value="hotdog">Hot Dog</option>
+                <option value="apollo">Apollo</option>
+              </select>
+        </form></div>
+</div>
+
+
+<div class="block">
+    <button type="button" class="button" ng-click="startTimer(data.timeSelected, data.musicSelected, data.guidanceSelected)" ng-show="showStartButton"> Start </button>
+    
+    <button type="button" class="button" ng-click="pauseTimer()" ng-show="showPauseButton"> Pause </button>
+    
+    <button type="button" class="button" ng-click="resumeTimer()" ng-show="showResumeButton"> Resume </button>
+    
+    <button type="button" class="button" ng-click="resetTimer()"> Reset </button>
+    
+    <timer ng-show="showTimer"></timer>
+    
+    <div class="error-message"> {{ errorMessage }} </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="unmindApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>unmind: unwind your mind</title>
+    <script src="https://use.typekit.net/dlv2cln.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="./styles/cs-select.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/cs-skin-border.css" />
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/foundation.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/seek-bar.css">
+    <link rel="stylesheet" href="./styles/background-images.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+    
+<body>    
+    <div class="container">
+        <div class="centered">
+            <div class="logo">
+            <img src="./assets/images/unmind-logo.png">
+            <div class="tagline">unwind your mind.</div>
+            </div>
+            <ui-view></ui-view>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <script src="./scripts/foundation.js"></script>    
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/controllers/LandingCtrl.js"></script>
+    <script src="./scripts/directives/timer.js"></script>
+    <script src="./scripts/directives/seekBar.js"></script>
+    <script src="./scripts/filters/timecode.js"></script>
+    <script src="./scripts/services/soundfiles.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.10/buzz.min.js"></script>
+    <script src="./scripts/background-images.js"></script>
+    <script src="./scripts/classie.js"></script>
+    <script src="./scripts/selectFx.js"></script>
+</body>
+</html>

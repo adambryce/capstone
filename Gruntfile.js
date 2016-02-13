@@ -42,7 +42,7 @@ module.exports = function(grunt) {
                     cwd: './app/pages'
                 }, {
                     expand: true,
-                    src: [ './**/*.css' ],
+                    src: [ './**/*.*' ],
                     dest: './dist/styles',
                     cwd: './app/styles'
                 }, {

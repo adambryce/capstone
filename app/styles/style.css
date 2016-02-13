@@ -1,9 +1,53 @@
 .container { 
-    width:80%;
+    width:100%;
     margin:auto;
+    padding-left:10%;
+    padding-right:10%;
 }
 
+body:before, body:after {
+    content: "";
+    position: fixed;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    height: 25px;
+}
 
+body:before {
+    top: 0;
+}
+
+body:after {
+    bottom: 0;
+}
+
+body {
+    font-family: "rooney-sans",sans-serif;
+    margin: 0;
+    height: 100%;
+    position: relative;
+    color:#ffffff;
+    border-left: 25px solid #ffffff;
+    border-right: 25px solid #ffffff;
+}
+
+.nav-links { 
+    top:15%;
+}
+
+.logo {
+    width:14rem;
+    margin:auto;
+    text-align:center;
+}
+
+.tagline {
+    font-family: "rooney-sans",sans-serif;
+    font-size:18px;
+    font-weight:700;
+    margin: 10px 0 25px 0;
+}
 
 /* Centering */ 
 
@@ -26,8 +70,167 @@
 
 /* The element to be centered, can also be of any width and height */ 
 .centered {
-  display: inline-block;
-  vertical-align: middle;
-  width: 300px;
+    width: 75%;
+    position: absolute;
+    top:25%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
+@media only screen and (max-width:1024px) {
+    .centered {
+        top:15%;
+    }
+}
+
+/* Timer Styling */ 
+
+.timer-outer {
+    padding-top:5px;
+}
+
+.timer {
+    display:inline-block;
+    width: 6rem;
+    height: 6rem;
+	background: rgba(255, 255, 255, 0.25);
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+.timer-colon {
+    display:inline-block;
+}
+
+.time {
+    font-size: 3.25rem;
+    font-weight: 300;
+    letter-spacing: -0.15rem;
+    padding:7px;
+}
+
+/* Buttons Styling */
+
+.mybutton {
+	min-width: 135px;
+	max-width: 250px;
+	display: inline-block;
+	margin: 20px auto 10px auto;
+	padding: 0em 1.5em;
+    font-size:23px;
+    letter-spacing:1px;
+	border: none;
+	background: none;
+	color: #ffffff;
+	vertical-align: middle;
+	position: relative;
+	z-index: 1;
+	-webkit-backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-width:615px) {
+    .mybutton {
+        min-width: 110px;
+        padding: 0em 1.25em;
+        font-size: 1.25em;
+    }
+}
+
+.mybutton:focus {
+	outline: none;
+}
+
+.mybutton > span {
+	vertical-align: middle;
+}
+
+.button--antiman {
+	background: none;
+	border: none;
+	height: 60px;
+}
+
+.button--antiman > span {
+	padding-left: 0.35em;
+}
+
+.button--antiman::before,
+.button--antiman::after {
+	content: '';
+	z-index: -1;
+	border-radius: inherit;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+}
+
+.button--antiman::before {
+	border: 2px solid #ffffff;
+	opacity: 0;
+    color:#ffffff;
+	-webkit-transform: scale3d(1.2, 1.2, 1);
+	transform: scale3d(1.2, 1.2, 1);
+}
+
+.button--round-l {
+	border-radius: 40px;
+}
+
+
+.button--text-medium {
+	font-weight: 500;
+}
+
+.button--antiman::after {
+	background: #29c5ff;
+}
+
+.button--antiman:hover::before {
+	opacity: 1;
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
+}
+.button--antiman:hover::after {
+	opacity: 0;
+	-webkit-transform: scale3d(0.8, 0.8, 1);
+	transform: scale3d(0.8, 0.8, 1);
+}
+
+
+/* --- Select Box Styles --*/
+select {
+    height: 3rem;
+    padding: 0.55rem;
+    border: 3px solid #29c5ff;
+    margin: 0 0 1rem;
+    font-size: 1.15rem;
+    font-family: inherit;
+    line-height: normal;
+    color: #0a0a0a;
+    background-color: #fefefe;
+    border-radius: 11px;
+}
+
+label {
+    display: block;
+    margin: 0;
+    font-size: .95rem;
+    letter-spacing: .05rem;
+    font-weight: 800;
+    line-height: 1.8;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+}

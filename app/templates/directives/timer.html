@@ -1,5 +1,12 @@
 <div class="timer-outer">
-  <div class="timer-inner">
-    <div class="timer"> {{ timeLeft | timecode }} </div>
-  </div>
+      <div class="timer">
+            <div class="time"> {{ minutes }}</div>
+      </div>
+        <div class="timer-colon">
+            <div class="time colon">:</div>
+      </div>
+      <div class="timer">
+            <div class="time"> {{ seconds }} </div>
+      </div>
 </div>
+

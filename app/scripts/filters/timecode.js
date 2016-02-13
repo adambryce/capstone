@@ -8,8 +8,8 @@
                 if (seconds < 10) {seconds = "0"+seconds;}
              
                 output = minutes+':'+seconds;
-             
-                return output
+                
+                return output;
             };
      }
  

@@ -1,50 +1,92 @@
-<div class="row">
-  <div class="small-12 large-4 columns">
-      <form>
-            <label>Select Your Time</label>
-              <select name="timeSelected" id="timeSelected" ng-model="data.timeSelected">
-                <option value="">Meditation Length</option>
-                <option value="300">5 Minutes</option>
-                <option value="600">10 Minutes</option>
-                <option value="900">15 Minutes</option>
-                <option value="1200">20 Minutes</option>
-              </select>
-        </form></div>
-  <div class="small-12 large-4 columns">
-      <form>
-            <label>Background Music</label>
-              <select name="musicSelected" id="musicSelected" ng-model="data.musicSelected">
-                <option value="">Silence</option>
-                <option value="forestStorm">Forest Storm</option>
-                <option value="oceanWaves">Ocean Waves</option>
-                <option value="cityNoise">City Noise</option>
-                <option value="apollo">Apollo</option>
-              </select>
-        </form></div>
-  <div class="small-12 large-4 columns">
-      <form>
-            <label>Guided Meditation?</label>
-              <select name="guidanceSelected" id="guidanceSelected" ng-model="data.guidanceSelected">
-                <option value="">No Guidance</option>
-                <option value="breathingMeditation">Breathing Meditation</option>
-                <option value="starbuck">Kindness</option>
-                <option value="hotdog">Hot Dog</option>
-                <option value="apollo">Apollo</option>
-              </select>
-        </form></div>
-</div>
+<section>
+    <div class="centered">
+        <div class="row">
+            <div class="small-12 large-4 columns">
+                <label>Length of Meditation</label>
+                    <select name="timeSelected" id="timeSelected" ng-model="data.timeSelected">
+                        <option value="" disabled selected>Meditation Length</option>
+                        <option value="300">5 Minutes</option>
+                        <option value="600">10 Minutes</option>
+                        <option value="900">15 Minutes</option>
+                        <option value="1200">20 Minutes</option>
+                        <option value="1500">25 Minutes</option>
+                        <option value="1800">30 Minutes</option>
+                        <option value="2700">45 Minutes</option>
+                        <option value="3600">60 Minutes</option>
+                    </select>
+            </div>
+        <div class="small-12 large-4 columns">
+          <form>
+                <label>Background Music</label>
+                  <select name="musicSelected" id="musicSelected" ng-model="data.musicSelected">
+                    <option value="" selected>Silence</option>
+                    <option value="0">Blue Coast</option>
+                    <option value="1">Afternoon Jungle</option>
+                    <option value="2">Almond Blossom</option>
+                    <option value="3">Summer Ambient</option>
+                    <option value="4">Forest Storm</option>
+                    <option value="5">Healing Sound</option>
+                    <option value="6">Morning Sun</option>
+                    <option value="7">Ocean Waves</option>
+                  </select>
+            </form>
+        </div>
+        <div class="small-12 large-4 columns">
+          <form>
+                <label>Guided Meditation?</label>
+                  <select name="guidanceSelected" id="guidanceSelected" ng-model="data.guidanceSelected">
+                    <option value="" selected>No Guidance</option>
+                    <option value="0">Awaken Abundance</option>
+                    <option value="1">Journey Into Healing</option>
+                    <option value="2">Release Stress</option>
+                    <option value="3">Gratitude</option>
+                    <option value="4">Awaken Creativity</option>
+                    <option value="5">Heart of Creation</option>
+                    <option value="6">Dream Meditation</option>
+                    <option value="7">Awaken Wanderlust</option>
+                  </select>
+            </form>
+        </div>
+    </div>
 
+        
+    <div class="row">
+        <div class="large-3 columns">&nbsp;</div>
+        <div class="small-6 large-3 columns">
+            <div class="block">
+                <button type="button" class="mybutton button--antiman button--round-l button--text-medium" ng-click="startTimer(data.timeSelected, data.musicSelected, data.guidanceSelected)" ng-show="showStartButton"> START  </button>
 
-<div class="block">
-    <button type="button" class="button" ng-click="startTimer(data.timeSelected, data.musicSelected, data.guidanceSelected)" ng-show="showStartButton"> Start </button>
-    
-    <button type="button" class="button" ng-click="pauseTimer()" ng-show="showPauseButton"> Pause </button>
-    
-    <button type="button" class="button" ng-click="resumeTimer()" ng-show="showResumeButton"> Resume </button>
-    
-    <button type="button" class="button" ng-click="resetTimer()"> Reset </button>
-    
-    <timer ng-show="showTimer"></timer>
-    
-    <div class="error-message"> {{ errorMessage }} </div>
+                <button type="button" class="mybutton button--antiman button--round-l button--text-medium" ng-click="pauseTimer()" ng-show="showPauseButton"> PAUSE </button>
+
+                <button type="button" class="mybutton button--antiman button--round-l button--text-medium" ng-click="resumeTimer()" ng-show="showResumeButton"> RESUME </button>
+            </div>
+        </div>
+        <div class="small-6 large-3 columns">
+            <div class="block">
+                <button type="button" class="mybutton button--antiman button--round-l button--text-mediumr" ng-click="resetTimer()"> RESET </button>
+            </div>
+        </div>
+        <div class="large-3 columns">&nbsp;</div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="block">
+                <div class="">
+                <timer ng-show="showTimer"></timer>
+                <div class="error-message"> {{ errorMessage }} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="row" ng-show="showTimer">
+        <div class="small-4 large-5 columns">&nbsp;</div>
+        <div class="small-4 large-2 columns">
+            <div class="control-group volume">
+                <span class="icon ion-volume-high volume-icon" ></span><seek-bar value="{{ volume }}" max="100" on-change="setVolume(value)"></seek-bar>
+            </div>
+        </div>
+        <div class="small-4 large-5 columns">&nbsp;</div>
+    </div>
 </div>
+</section>
